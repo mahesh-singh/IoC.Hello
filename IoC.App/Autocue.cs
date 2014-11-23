@@ -9,6 +9,11 @@ namespace IoC.App
     {
         private IClock _clock;
 
+        public Autocue(IClock clock)
+        {
+            _clock = clock;
+        }
+
         public string GetSomethingIntelligent()
         {
             DateTime now = _clock.Now;
