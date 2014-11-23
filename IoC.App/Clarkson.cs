@@ -5,27 +5,16 @@ using System.Text;
 
 namespace IoC.App
 {
-    class Clarkson
+    public class Clarkson
     {
-        internal void ShoutSomthing()
+        public void ShoutSomthing()
         {
+            var autocue = new Autocue();
+            var message = autocue.GetSomethingIntelligent();
+
             Console.ForegroundColor = ConsoleColor.Red;
 
-            if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday)
-            {
-                if (DateTime.Now.Hour >= 18 && DateTime.Now.Hour < 20)
-                {
-                    Console.WriteLine("Good evening!");
-                }
-                else if (DateTime.Now.Hour >= 20)
-                {
-                    Console.WriteLine("Get out of the way!"); 
-                }
-            }
-            else 
-            {
-                Console.WriteLine("You're wrong!");
-            }
+            Console.WriteLine(message);
 
         }
     }
